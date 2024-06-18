@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html th:lang="|${#locale.language}-${#locale.country}|"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Spring App</title>
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+</head>
+<body class="flex flex-col min-h-screen text-white">
+
+<header th:replace="~{fragments/header :: header}"> </header>
+
+<section layout:fragment="page-content" class="flex-1 bg-neutral-700 py-2 px-5">
+</section>
+
+<footer class="text-center font-semibold text-zinc-500 mt-auto bg-neutral-800 py-2 px-5">
+    © copyright
+</footer>
+
+<script type="text/javascript" th:src="@{/webjars/alpinejs/dist/cdn.min.js}" defer
+></script>
+<th:block layout:fragment="page-scripts">
+    <script>
+        function showInfo() {
+            return {
+                infoShow: false,
+                toggleInfoVisibility() {
+                    this.infoShow = !this.infoShow;
+                },
+                closeInfo() {
+                    this.infoShow = false;
+                },
+                isVisibleInfo() {
+                    return this.infoShow;
+                }
+
+            }
+        }
+
+    </script>
+</th:block>
+</body>
+</html>
