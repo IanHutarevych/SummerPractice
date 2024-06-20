@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Contact</title>
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+    <!-- Підключення стилів -->
+    <style>
+        /* Основний стиль для сторінки */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f4f8;
+            color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        /* Стилі для контейнера форми */
+        .form-container {
+            background-color: #ffffff;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            margin: 1rem;
+        }
+
+        /* Стилі для заголовка */
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Стилі для форми */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Стилі для групи полів */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        /* Стилі для міток */
+        label {
+            margin-bottom: 0.5rem;
+            color: #555;
+        }
+
+        /* Стилі для полів вводу */
+        input[type="text"], input[type="number"] {
+            padding: 0.75rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            width: calc(100% - 2rem); /* Враховує padding */
+            margin-top: 0.25rem;
+        }
+
+        /* Стилі для кнопки збереження */
+        button[type="submit"] {
+            background-color: #3490dc;
+            color: #ffffff;
+            padding: 0.75rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #2779bd;
+        }
+
+        /* Стилі для посилання "Back to Contacts" */
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 1rem;
+            color: #3490dc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2779bd;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Add New Contact</h2>
+    <form th:action="@{/contacts/save}" th:object="${contact}" method="post">
+        <div class="form-group">
+            <label for="name">Name:</label>
+            <input type="text" id="name" th:field="*{name}" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age:</label>
+            <input type="number" id="age" th:field="*{age}" required>
+        </div>
+        <div class="form-group">
+            <label for="phone">Phone:</label>
+            <input type="text" id="phone" th:field="*{phone}" required>
+        </div>
+        <button type="submit">Save</button>
+    </form>
+    <a href="/contacts">Back to Contacts</a>
+</div>
+
+</body>
+</html>
