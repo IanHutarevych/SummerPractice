@@ -1,0 +1,44 @@
+-<header th:fragment="header" class="bg-gradient-to-r from-purple-500 to-white py-3 px-5 flex items-center justify-between text-gray-700">
+    <div class="text-2xl uppercase font-bold">
+        Your Contacts
+    </div>
+
+    <nav class="flex gap-10">
+        <a th:replace="~{fragments/header_link :: header_link('/','Home', ~{::#icon})}" class="text-white hover:text-gray-300">
+            <svg id="icon" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12.2039V13.725C22 17.6258 22 19.5763 20.8284 20.7881C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.7881C2 19.5763 2 17.6258 2 13.725V12.2039C2 9.91549 2 8.77128 2.5192 7.82274C3.0384 6.87421 3.98695 6.28551 5.88403 5.10813L7.88403 3.86687C9.88939 2.62229 10.8921 2 12 2C13.1079 2 14.1106 2.62229 16.116 3.86687L18.116 5.10812C20.0131 6.28551 20.9616 6.87421 21.4808 7.82274" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M15 18H9" stroke="#ffffff" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+        </a>
+        <a th:replace="~{fragments/header_link :: header_link('/about','About us', ~{::#icon-2})}" class="text-white hover:text-gray-300">
+            <svg id="icon-2" width="20px" height="20px" viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <title>about</title>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="about-white" fill="#ffffff" transform="translate(42.666667, 42.666667)">
+                        <path d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51168 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.154987,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51168 331.154987,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.44,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.44,384 213.333333,384 Z M240.04672,128 C240.04672,143.46752 228.785067,154.666667 213.55008,154.666667 C197.698773,154.666667 186.713387,143.46752 186.713387,127.704107 C186.713387,112.5536 197.99616,101.333333 213.55008,101.333333 C228.785067,101.333333 240.04672,112.5536 240.04672,128 Z M192.04672,192 L234.713387,192 L234.713387,320 L192.04672,320 L192.04672,192 Z" id="Shape"></path>
+                    </g>
+                </g>
+            </svg>
+        </a>
+        <a th:replace="~{fragments/header_link :: header_link('/contacts','Contacts', ~{::#icon-4})}" class="text-white hover:text-gray-300">
+            <svg id="icon-4" width="20px" height="20px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3 5.5C3 14.0604 9.93959 21 18.5 21C18.8862 21 19.2691 20.9859 19.6483 20.9581C20.0834 20.9262 20.3009 20.9103 20.499 20.7963C20.663 20.7019 20.8185 20.5345 20.9007 20.364C21 20.1582 21 19.9181 21 19.438V16.6207C21 16.2169 21 16.015 20.9335 15.842C20.8749 15.6891 20.7795 15.553 20.6559 15.4456C20.516 15.324 20.3262 15.255 19.9468 15.117L16.74 13.9509C16.2985 13.7904 16.0777 13.7101 15.8683 13.7237C15.6836 13.7357 15.5059 13.7988 15.3549 13.9058C15.1837 14.0271 15.0629 14.2285 14.8212 14.6314L14 16C11.3501 14.7999 9.2019 12.6489 8 10L9.36863 9.17882C9.77145 8.93713 9.97286 8.81628 10.0942 8.64506C10.2012 8.49408 10.2643 8.31637 10.2763 8.1317C10.2899 7.92227 10.2096 7.70153 10.0491 7.26005L8.88299 4.05321C8.745 3.67376 8.67601 3.48403 8.55442 3.3441C8.44701 3.22049 8.31089 3.12515 8.15802 3.06645C7.98496 3 7.78308 3 7.37932 3H4.56201C4.08188 3 3.84181 3 3.63598 3.09925C3.4655 3.18146 3.29814 3.33701 3.2037 3.50103C3.08968 3.69907 3.07375 3.91662 3.04189 4.35173C3.01413 4.73086 3 5.11378 3 5.5Z" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </a>
+    </nav>
+
+    <div class="relative" x-data="showInfo()" @click.away="closeInfo" @keydown.window.escape="closeInfo">
+        <button @click="toggleInfoVisibility">
+            <svg width="35px" height="35px" viewBox="0 -0.5 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5.5 11V13C5.5 16.3137 8.18629 19 11.5 19H13.5C16.8137 19 19.5 16.3137 19.5 13V11C19.5 7.68629 16.8137 5 13.5 5H11.5C8.18629 5 5.5 7.68629 5.5 11Z" stroke="#800080" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12.5 12V16" stroke="#800080" stroke-width="1.5" stroke-linecap="round"/>
+                <path d="M12.5 9.5C12.2243 9.5 12 9.2757 12 9C12 8.7243 12.2243 8.5 12.5 8.5C12.7757 8.5 13 8.7243 13 9C13 9.2757 12.7757 9.5 12.5 9.5Z" fill="#800080"/>
+                <path d="M12.5 8C13.0523 8 13.5 8.44772 13.5 9C13.5 9.55228 13.0523 10 12.5 10C11.9477 10 11.5 9.55228 11.5 9C11.5 8.44772 11.9477 8 12.5 8Z" fill="#800080"/>
+            </svg>
+        </button>
+
+        <div x-show="isVisibleInfo()" class="absolute bg-gradient-to-r from-purple-500 to-pink-500 text-sm text-white w-[420px] text-wrap -left-[420px] p-2 shadow-lg">
+            <p>THERE MUST BE HELPFUL INFORMATION. This web-site was created by student second grade of computer science Hutarevych Ioann for easy navigation between your contacts!</p>
+        </div>
+    </div>
+</header>

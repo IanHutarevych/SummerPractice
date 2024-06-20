@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/loyout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+
+    <style>
+        /* Стилізація всього документу */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333; /* колір тексту */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* фоновий колір */
+            text-align: center; /* центрування тексту */
+        }
+
+        /* Контейнер для центрування та обмеження ширини контенту */
+        .container {
+            max-width: 800px; /* максимальна ширина контейнера */
+            margin: 0 auto; /* автоматичні відступи по боках для центрування */
+            padding: 20px; /* зовнішні відступи для контейнера */
+            background-color: #fff; /* фоновий колір контейнера */
+            text-align: left; /* вирівнювання тексту в контейнері */
+            border-radius: 5px; /* закругленість кутиків */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* тінь для контейнера */
+        }
+
+        /* Заголовки */
+        h1, h2 {
+            font-size: 28px; /* розмір шрифту заголовків */
+            margin-bottom: 20px; /* відступ після заголовка */
+            color: #000000;
+        }
+
+        /* Текст параграфів */
+        p, ul {
+            font-size: 18px; /* розмір шрифту параграфів та списків */
+            line-height: 1.6; /* висота рядка */
+            margin-bottom: 15px; /* відступ після параграфу та списку */
+            max-width: 800px; /* максимальна ширина для параграфів та списків */
+            margin-left: auto; /* автоматичні відступи по боках для центрування */
+            margin-right: auto;
+            color: #000000;
+        }
+
+        /* Стилі для елемента по центру */
+        .centered-text {
+            font-size: 24px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+
+    <title>About Us</title>
+</head>
+<body>
+
+<header>
+    <!-- Ваша верхня частина сайту (наприклад, меню, логотип і т. д.) -->
+</header>
+
+<div class="container">
+    <section layout:fragment="page-content">
+        <h1>About Us</h1>
+        <p>Welcome to our firm! We are dedicated to creating simple yet functional projects that cater to modern needs.</p>
+
+        <h2>Our Mission</h2>
+        <p>Our mission is to leverage our skills in computer science to deliver innovative solutions.</p>
+
+        <h2>Founder's Vision</h2>
+        <p>Founded by Hutarevych Ioann, a passionate 2nd-year computer science student, our firm aims to make a mark in the tech industry through our summer internship projects.</p>
+
+        <h2>What We Do</h2>
+        <p>We specialize in:</p>
+        <ul>
+            <li>Creating user-friendly web applications</li>
+            <li>Developing robust software solutions</li>
+            <li>Designing intuitive mobile apps</li>
+        </ul>
+
+        <h2>Why Choose Us?</h2>
+        <p>Choosing us means:</p>
+        <ul>
+            <li>Access to cutting-edge technology</li>
+            <li>Commitment to quality and innovation</li>
+            <li>Collaboration with a young, dynamic team</li>
+        </ul>
+
+        <h2>Join Our Team</h2>
+        <p>Interested in joining our internship program? Contact us today to kick-start your career in tech!</p>
+
+        <!-- Елемент по центру -->
+        <div class="centered-text">
+            <p>Ready to explore our services?</p>
+            <a href="/" style="text-decoration: none; color: #007bff;">Discover More</a>
+        </div>
+    </section>
+</div>
+
+<footer>
+    <!-- Ваш нижній колонтитул (наприклад, контактна інформація, посилання на соціальні мережі і т. д.) -->
+</footer>
+
+<th:block layout:fragment="script-content">
+    <!-- Якщо потрібно додати скрипти або інші динамічні елементи -->
+</th:block>
+
+</body>
+</html>

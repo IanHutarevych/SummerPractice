@@ -1,0 +1,6 @@
+<a th:fragment="header_link(linkUrl, text, svgContent)"
+   class="hover:text-zinc-400 duration-300 flex items-center gap-2"
+   th:href="${linkUrl}">
+    <svg th:replace="${svgContent}"></svg> [[${text}]]
+</a>
+    

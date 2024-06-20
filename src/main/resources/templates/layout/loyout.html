@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html th:lang="|${#locale.language}-${#locale.country}|"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Spring App</title>
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+    <!-- Підключення стилів -->
+    <style>
+        /* Приклад стилів для h1 */
+        h1 {
+            color: #000000; /* Чорний колір тексту для заголовків */
+        }
+
+        /* Приклад стилів для кнопки */
+        .btn-add-contact {
+            background-color: #3490dc; /* Синій фон */
+            color: #ffffff; /* Білий колір тексту */
+            padding: 0.5rem 1rem; /* Поправте відступи за вашими потребами */
+            border-radius: 0.25rem; /* Закруглені кути */
+            cursor: pointer; /* Показувати курсор при наведенні */
+            transition: background-color 0.3s ease; /* Плавна анімація */
+        }
+
+        .btn-add-contact:hover {
+            background-color: #2779bd; /* Зміна кольору при наведенні */
+        }
+
+        /* Стилі для блоку з додатковою інформацією */
+        .info-container {
+            background-color: #f3f4f6; /* Сірий фон */
+            padding: 1rem; /* Відступи всередині блоку */
+            border-radius: 0.5rem; /* Закруглені кути */
+            margin-top: 1rem; /* Відступ зверху */
+        }
+    </style>
+</head>
+<body class="flex flex-col min-h-screen text-white">
+
+<!-- Включення шапки -->
+<header th:replace="~{fragments/header :: header}"></header>
+
+<!-- Основний контент сторінки -->
+<section layout:fragment="page-content" class="flex-1 bg-white py-2 px-5">
+    <h1>Here you can choose any action:</h1>
+
+    <!-- Кнопка для додавання нового контакту -->
+    <div class="mt-4">
+        <button @click="toggleInfoVisibility()" class="btn-add-contact">
+            Show all contacts
+        </button>
+
+    </div>
+
+
+
+
+
+
+
+
+    <div class="mt-4">
+        <a href="/contacts/add" style="background-color: #3490dc; color: #ffffff; padding: 0.5rem 1rem; border-radius: 0.25rem; cursor: pointer; transition: background-color 0.3s ease; text-decoration: none;">
+            Add new contact
+        </a>
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="mt-4">
+        <button @click="toggleInfoVisibility()" class="btn-add-contact">
+            Delete contact
+        </button>
+
+    </div>
+
+</section>
+
+<!-- Футер сторінки -->
+<footer class="bg-gradient-to-r from-purple-500 to-white text-center font-semibold text-zinc-500 mt-auto bg-neutral-800 py-2">
+    © 2024 Your Company
+</footer>
+
+<!-- Підключення скриптів -->
+<script type="text/javascript" th:src="@{/webjars/alpinejs/dist/cdn.min.js}" defer></script>
+
+<!-- Скрипти, що включаються через Thymeleaf -->
+<th:block layout:fragment="page-scripts">
+    <script>
+        function showInfo() {
+            return {
+                infoShow: false,
+                toggleInfoVisibility() {
+                    this.infoShow = !this.infoShow;
+                },
+                closeInfo() {
+                    this.infoShow = false;
+                },
+                isVisibleInfo() {
+                    return this.infoShow;
+                }
+            }
+        }
+    </script>
+</th:block>
+
+</body>
+</html>

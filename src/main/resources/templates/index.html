@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/loyout}">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/application.css}">
+    <style>
+        /* Загальні стилі */
+        body {
+            font-family: Arial, sans-serif;
+            color: #333; /* колір тексту */
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2; /* фоновий колір */
+            text-align: center; /* центрування тексту */
+        }
+
+
+        .container {
+            max-width: 800px; /* максимальна ширина контейнера */
+            margin: 0 auto; /* автоматичні відступи по боках для центрування */
+            padding: 20px; /* зовнішні відступи для контейнера */
+            background-color: #fff; /* фоновий колір контейнера */
+            text-align: left; /* вирівнювання тексту в контейнері */
+            border-radius: 5px; /* закругленість кутиків */
+            box-shadow: 0 0 10px rgba(0,0,0,0.1); /* тінь для контейнера */
+        }
+
+        /* Стилі для заголовків */
+        h1, h2 {
+            font-size: 28px; /* розмір шрифту заголовків */
+            margin-bottom: 20px; /* відступ після заголовка */
+        }
+
+        /* Стилі для параграфів */
+        p, ul {
+            font-size: 18px; /* розмір шрифту параграфів та списків */
+            line-height: 1.6; /* висота рядка */
+            margin-bottom: 15px; /* відступ після параграфу та списку */
+            max-width: 800px; /* максимальна ширина для параграфів та списків */
+            margin-left: auto; /* автоматичні відступи по боках для центрування */
+            margin-right: auto;
+            color: #000000;
+        }
+    </style>
+    <title>Home</title>
+</head>
+<body>
+
+
+<div class="container">
+<section layout:fragment="page-content">
+    <h1>Welcome to Your Personal Contact Book!</h1>
+
+    <p>Discover the easiest way to manage all your contacts in one place. Whether you're keeping track of professional contacts, friends, or family, our intuitive interface makes it simple and efficient.</p>
+
+    <h2>Key Features:</h2>
+    <ul>
+        <li>Quickly add, edit, and delete contacts</li>
+        <li>Organize contacts into categories or groups</li>
+        <li>Sync your contacts across devices</li>
+        <li>Securely backup and restore your data</li>
+    </ul>
+
+    <p>Join thousands of users who rely on our platform to stay connected effortlessly. Start managing your contacts today!</p>
+</section>
+</div>
+
+<th:block layout:fragment="script-content">
+
+</th:block>
+</body>
+</html>
